@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+
+}
+
+.text-container {
+  text-align: justify;
+  position: relative;
+  background-color: lightgrey;
+  margin-left: 1%;
+  margin-right: 1%;
+  border: solid thin grey;
+  padding: 5px;
+}
+
+.text-container > p {
+  font-size: 20x;
+  color: black;
+}
+
+h3 {
+  margin-left: 40%;
+  margin-right: 40%;
+  text-align: center;
+  font-size: 30px;
+  background-color: #dc7633;
+  font-family: "Quicksand", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 10%;
+  background-color: #212f3d;
+  justify-content: space-between;
+}
+
+.logo {
+  color: #fff;
+  font-weight: 900;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+}
+
+nav ul li {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+nav ul li a {
+  color: #fff;
+  display: block;
+  padding: 10px 20px;
+  border-radius: 1px;
+}
+
+nav ul li a:hover {
+  color: #dc7633;
+}
+
+.cta {
+  background-color: #dc7633;
+  color: #fff;
+}
+
+.cta:hover {
+  background-color: #d35400;
+  color: #fff;
+}
+
+.item {
+  border: solid thin grey;
+  width: 50%;
+  margin: 0.3%;
+  padding: 5px;
+}
+
+.grid-container {
+  display: grid;
+  width: 90%;
+  grid-template-rows: 2;
+  grid-template-columns: 3;
+  grid-gap: 0.3vw;
+}
+
+.grid-container img {
+  width: 100%;
+}
+
+.grid-container > .item-2,
+.item-3,
+.item-4 {
+  height: 100%;
+}
+
+.grid-container > .item-1 {
+  grid-column: 1/4;
+}
+
+.bottom {
+  display: flex;
+  align-items: stretch;
+  max-width: 90%;
+  margin: auto;
+  background: LightGrey;
+}
+
+.title div {
+  display: inline-block;
+  background: #f9e79f;
+  text-align: center;
+  font-size: 130%;
+  font-weight: bold;
+}
+
+img {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 700px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    width: 97%;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+}

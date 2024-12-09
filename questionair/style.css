@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+html {
+  background-color: lightgrey;
+}
+
+li {
+  list-style-type: none;
+  background-color: #212f3d;
+  color: white;
+}
+
+.question {
+  border: solid thin grey;
+}
+
+ul > li {
+  background-color: #dc7633;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.error {
+  color: red;
+}
+
+h3 {
+  position: relative;
+  font-size: 2em;
+  color: white;
+  font-family: Roboto;
+  left: 20px;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 10%;
+  background-color: #212f3d;
+  justify-content: space-between;
+}
+
+.logo {
+  color: #fff;
+  font-weight: 900;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+}
+
+nav ul li {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+nav ul li a {
+  color: #fff;
+  display: block;
+  padding: 10px 20px;
+  border-radius: 1px;
+}
+
+nav ul li a:hover {
+  color: #dc7633;
+}
+
+.cta {
+  background-color: #dc7633;
+  color: #fff;
+}
+
+.cta:hover {
+  background-color: #d35400;
+  color: #fff;
+}
+
+#test {
+  display: inline-flex;
+  flex-direction: column;
+  font-size: 1.5em;
+  gap: 50px;
+}
+p {
+  font-family: Roboto;
+  color: black;
+}
+
+input[type="button"] {
+  display: block;
+  margin: 60px auto;
+  padding: 1em;
+  width: 140px;
+  height: 50px;
+  text-align: center;
+  background: #1c1f2b;
+  border-radius: 40px;
+  position: relative;
+  color: white;
+}
+
+
+@media (max-width: 700px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    width: 97%;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+}

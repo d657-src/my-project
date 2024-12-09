@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+.container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 10%;
+  background-color: #212f3d;
+  justify-content: space-between;
+}
+
+.logo {
+  color: #fff;
+  font-weight: 900;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+}
+
+nav ul li {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+nav ul li a {
+  color: #fff;
+  display: block;
+  padding: 10px 20px;
+  border-radius: 1px;
+}
+
+nav ul li a:hover {
+  color: #dc7633;
+}
+
+.cta {
+  background-color: #dc7633;
+  color: #fff;
+}
+
+.cta:hover {
+  background-color: #d35400;
+  color: #fff;
+}
+
+.item {
+  border: solid thin grey;
+  width: 50%;
+  margin: 0.3%;
+  padding: 5px;
+}
+
+.grid-container {
+  display: grid;
+  width: 90%;
+  margin: auto;
+  grid-template-rows: 2;
+  grid-template-columns: 3;
+  grid-gap: 0.3vw;
+}
+
+.grid-container img {
+  width: 100%;
+}
+
+.grid-container > .item-2,
+.item-3,
+.item-4 {
+  height: 100%;
+}
+
+.grid-container > .item-1 {
+  grid-column: 1/4;
+}
+
+.bottom {
+  display: flex;
+  align-items: stretch;
+  max-width: 90%;
+  margin: auto;
+  background: LightGrey;
+}
+
+.title div {
+  display: inline-block;
+  background: #f9e79f;
+  text-align: center;
+  font-size: 130%;
+  font-weight: bold;
+}
+
+@media (max-width: 700px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    width: 97%;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+}
+
+#forms .container {
+  display: inline-block;
+  width: 300px;
+  margin-right: 20px;
+}
+
+.container-one {
+  display: grid;
+  grid-template: 1fr / 110px 200px;
+}
+
+.container-two {
+  display: grid;
+  grid-template: 1fr / 70px 40px 90px 20px 90px;
+}
+
+th {
+  background-color: #212f3d;
+  color: white;
+}
+
+td {
+  background-color: #dc7633;
+}
+
+tr > td:nth-child(2),
+td:nth-child(4),
+td:nth-child(6),
+td:nth-child(7) {
+  background-color: #e2915b;
+}

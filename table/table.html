@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width. initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>My Simple Website</title>
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">CARS</a>
+      <nav>
+        <ul>
+          <li>
+            <a
+              href="/home/ddd/uni/programming/Project/index.html"
+              class="cta"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="/home/ddd/uni/programming/Project/questionair/index.html"
+              class="cta"
+              >Questionair</a
+            >
+          </li>
+          <li>
+            <a
+              href="/home/ddd/uni/programming/Project/table/table.html"
+              class="cta"
+              >Table</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div id="forms">
+      <div class="container">
+        <h3>Filter</h3>
+        <form>
+          <p class="container-one">
+            <label for="name">Name:</label>
+            <input type="text" name="name" />
+          </p>
+          <p class="container-one">
+            <label for="drivetrain">Drivetrain:</label>
+            <input type="text" name="drivetrain" />
+          </p>
+          <p class="container-one">
+            <label for="avgPaid">Avg Paid:</label>
+            <input type="text" name="avgPaid" />
+          </p>
+          <p class="container-one">
+            <label for="transmission">Transmission:</label>
+            <input type="text" name="transmission" />
+          </p>
+          <p class="container-two">
+            <label for="msrp">MSRP: </label>
+            from <input type="number" name="msrpFrom" /> to
+            <input type="number" name="msrpTo" />
+          </p>
+          <p class="container-two">
+            <label for="ratingFrom">Ratings:</label>
+            from <input type="number" name="ratingFrom" /> to
+            <input type="number" name="ratingTo" />
+          </p>
+          <input
+            type="button"
+            value="Search"
+            onclick="filterTable('list', this.form)"
+          />
+          <input
+            type="button"
+            value="Refresh Filters"
+            onclick="clearFilter('list', this.form)"
+          />
+        </form>
+      </div>
+      <div class="container">
+        <h3>Sort</h3>
+        <form>
+          <p>
+            Sort By
+            <select id="fields"></select
+            ><br />
+          </p>
+          <!-- <p>
+            Sort By
+            <select id="fields2"></select
+            ><br />
+          </p> -->
+          <p>By descending? <input type="checkbox" id="desc" /></p>
+          <input
+            type="button"
+            value="Sort"
+            onclick="sortTable('list', this.form.fields.value, this.form.desc.checked)"
+          />
+          <input
+            type="button"
+            value="Refresh"
+            onclick="sortTable('list', 0, false)"
+          />
+        </form>
+      </div>
+    </div>
+    <div class="container">
+      <table border="1" cellspacing="0" id="list">
+        <tr>
+          <th>Name</th>
+          <th>MSRP</th>
+          <th>Avg Paid ($)</th>
+          <th>Transmission</th>
+          <th>Drivetrain</th>
+          <th>Ratings</th>
+        </tr>
+        <tr>
+          <td>Acura Integra Type S</td>
+          <td>51</td>
+          <td>53</td>
+          <td>Manual</td>
+          <td>Front</td>
+          <td>9.1</td>
+        </tr>
+        <tr>
+          <td>BMW 8-Series</td>
+          <td>90</td>
+          <td>90</td>
+          <td>Automatic</td>
+          <td>Rear</td>
+          <td>8.5</td>
+        </tr>
+        <tr>
+          <td>BMW M2</td>
+          <td>63</td>
+          <td>64</td>
+          <td>Manual</td>
+          <td>Rear</td>
+          <td>8.6</td>
+        </tr>
+        <tr>
+          <td>BMW Z4</td>
+          <td>53</td>
+          <td>53</td>
+          <td>Automatic</td>
+          <td>Rear</td>
+          <td>8.5</td>
+        </tr>
+        <tr>
+          <td>Chevrolet Camaro</td>
+          <td>30</td>
+          <td>30</td>
+          <td>Manual</td>
+          <td>Rear</td>
+          <td>8.1</td>
+        </tr>
+        <tr>
+          <td>Chevrolet Corvette</td>
+          <td>68</td>
+          <td>71</td>
+          <td>Automatic</td>
+          <td>Rear</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <td>Ford Mustang</td>
+          <td>30</td>
+          <td>31</td>
+          <td>Automatic</td>
+          <td>Rear</td>
+          <td>8.1</td>
+        </tr>
+        <tr>
+          <td>Jaguar F-Type</td>
+          <td>77</td>
+          <td>77</td>
+          <td>Automatic</td>
+          <td>Rear</td>
+          <td>7.4</td>
+        </tr>
+        <tr>
+          <td>Lexus LC</td>
+          <td>98</td>
+          <td>98</td>
+          <td>Automatic</td>
+          <td>Rear</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td>Nissan GT-R</td>
+          <td>121</td>
+          <td>121</td>
+          <td>Automatic</td>
+          <td>All</td>
+          <td>7.5</td>
+        </tr>
+        <tr>
+          <td>Nissan Z</td>
+          <td>42</td>
+          <td>42</td>
+          <td>Manual</td>
+          <td>Rear</td>
+          <td>7.9</td>
+        </tr>
+        <tr>
+          <td>Porsche Boxster</td>
+          <td>70</td>
+          <td>70</td>
+          <td>Manual</td>
+          <td>Rear</td>
+          <td>8.5</td>
+        </tr>
+        <tr>
+          <td>Porsche Cayman</td>
+          <td>68</td>
+          <td>68</td>
+          <td>Manual</td>
+          <td>Rear</td>
+          <td>8.5</td>
+        </tr>
+        <tr>
+          <td>Lexus GX</td>
+          <td>93</td>
+          <td>90</td>
+          <td>Automatic</td>
+          <td>Rear</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td>Ford 22</td>
+          <td>63</td>
+          <td>50</td>
+          <td>Automatic</td>
+          <td>All</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <td>BMW 21</td>
+          <td>91</td>
+          <td>80</td>
+          <td>Automatic</td>
+          <td>Rear</td>
+          <td>9.5</td>
+        </tr>
+        <tr>
+          <td>Toyota VV</td>
+          <td>55</td>
+          <td>50</td>
+          <td>Automatic</td>
+          <td>Rear</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td>Camaro LC</td>
+          <td>78</td>
+          <td>68</td>
+          <td>Automatic</td>
+          <td>Rear</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>Nissan 7</td>
+          <td>100</td>
+          <td>90</td>
+          <td>Automatic</td>
+          <td>Rear</td>
+          <td>7.5</td>
+        </tr>
+        <tr>
+          <td>Porsche 1</td>
+          <td>142</td>
+          <td>142</td>
+          <td>Manual</td>
+          <td>Rear</td>
+          <td>7.9</td>
+        </tr>
+        <tr>
+          <td>Lexus Boxster</td>
+          <td>90</td>
+          <td>80</td>
+          <td>Manual</td>
+          <td>Rear</td>
+          <td>8.5</td>
+        </tr>
+        <tr>
+          <td>Villa Cayman</td>
+          <td>98</td>
+          <td>88</td>
+          <td>Manual</td>
+          <td>All</td>
+          <td>8.5</td>
+        </tr>
+        <tr>
+          <td>Ligma</td>
+          <td>193</td>
+          <td>290</td>
+          <td>Automatic</td>
+          <td>Rear</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>Ford Candice</td>
+          <td>83</td>
+          <td>70</td>
+          <td>Automatic</td>
+          <td>All</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <td>BMW Memes</td>
+          <td>91</td>
+          <td>80</td>
+          <td>Automatic</td>
+          <td>All</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>Toyota Country</td>
+          <td>65</td>
+          <td>50</td>
+          <td>Automatic</td>
+          <td>All</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td>Acura S</td>
+          <td>71</td>
+          <td>53</td>
+          <td>Manual</td>
+          <td>Front</td>
+          <td>9.1</td>
+        </tr>
+        <tr>
+          <td>BMW 9</td>
+          <td>50</td>
+          <td>50</td>
+          <td>Automatic</td>
+          <td>Front</td>
+          <td>8.5</td>
+        </tr>
+        <tr>
+          <td>BMW M3</td>
+          <td>83</td>
+          <td>94</td>
+          <td>Manual</td>
+          <td>All</td>
+          <td>8.6</td>
+        </tr>
+        <tr>
+          <td>BMW R6</td>
+          <td>93</td>
+          <td>83</td>
+          <td>Automatic</td>
+          <td>Rear</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td>Chevrolet 8</td>
+          <td>80</td>
+          <td>90</td>
+          <td>Manual</td>
+          <td>All</td>
+          <td>8.1</td>
+        </tr>
+        <tr>
+          <td>Chevrolet Camaro</td>
+          <td>88</td>
+          <td>91</td>
+          <td>Automatic</td>
+          <td>Rear</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>Ford Shmort</td>
+          <td>20</td>
+          <td>21</td>
+          <td>Automatic</td>
+          <td>Rear</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>Jaguar A-Type</td>
+          <td>87</td>
+          <td>97</td>
+          <td>Automatic</td>
+          <td>Rear</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>Lexus RC</td>
+          <td>198</td>
+          <td>198</td>
+          <td>Automatic</td>
+          <td>Rear</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <td>Nissan GRA</td>
+          <td>21</td>
+          <td>21</td>
+          <td>Automatic</td>
+          <td>Rear</td>
+          <td>7.5</td>
+        </tr>
+        <tr>
+          <td>Nissan GTX</td>
+          <td>142</td>
+          <td>142</td>
+          <td>Manual</td>
+          <td>Rear</td>
+          <td>7.9</td>
+        </tr>
+        <tr>
+          <td>Porsche BoomBoom</td>
+          <td>40</td>
+          <td>50</td>
+          <td>Manual</td>
+          <td>Rear</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>Porsche Dodo</td>
+          <td>98</td>
+          <td>88</td>
+          <td>Manual</td>
+          <td>Rear</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>Lexus YOYO</td>
+          <td>73</td>
+          <td>80</td>
+          <td>Automatic</td>
+          <td>Rear</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td>Ford 21</td>
+          <td>83</td>
+          <td>90</td>
+          <td>Automatic</td>
+          <td>All</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>BMW Chivau</td>
+          <td>71</td>
+          <td>70</td>
+          <td>Manual</td>
+          <td>Rear</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>Toyota UU</td>
+          <td>75</td>
+          <td>70</td>
+          <td>Manua</td>
+          <td>Rear</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <td>Camaro WakuWaku</td>
+          <td>78</td>
+          <td>98</td>
+          <td>Automatic</td>
+          <td>Rear</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td>Nissan Japon</td>
+          <td>70</td>
+          <td>80</td>
+          <td>Automatic</td>
+          <td>All</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>Porsche 1</td>
+          <td>142</td>
+          <td>142</td>
+          <td>Manual</td>
+          <td>Rear</td>
+          <td>7.9</td>
+        </tr>
+        <tr>
+          <td>Lexus LMAO</td>
+          <td>40</td>
+          <td>50</td>
+          <td>Manual</td>
+          <td>All</td>
+          <td>8.5</td>
+        </tr>
+        <tr>
+          <td>Ket Luka</td>
+          <td>78</td>
+          <td>98</td>
+          <td>Manual</td>
+          <td>All</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>Sigma</td>
+          <td>83</td>
+          <td>99</td>
+          <td>Automatic</td>
+          <td>Rear</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td>Ford Hackathon</td>
+          <td>123</td>
+          <td>130</td>
+          <td>Automatic</td>
+          <td>All</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>BMW Life</td>
+          <td>71</td>
+          <td>70</td>
+          <td>Automatic</td>
+          <td>All</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td>Toyota Lol</td>
+          <td>85</td>
+          <td>70</td>
+          <td>Automatic</td>
+          <td>All</td>
+          <td>7</td>
+        </tr>
+      </table>
+    </div>
+    <script src="program.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </body>
+</html>
