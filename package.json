@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  },
+  "name": "my-project",
+  "version": "1.0.0",
+  "main": "program.js",
+  "type": "module",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d657-src/my-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/d657-src/my-project/issues"
+  },
+  "homepage": "https://github.com/d657-src/my-project#readme",
+  "description": ""
+}
