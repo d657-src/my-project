@@ -6,7 +6,7 @@ const port = 3000;
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  res.render("/home/ddd/coding/my-project/questionair/questionair.ejs");
+  res.render("page.ejs");
 });
 
 app.listen(port, () => {
