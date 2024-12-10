@@ -1,41 +1,30 @@
 function setSortTable(idTable, idSelect) {
-  // находим нужную таблицу
   let table = document.getElementById(idTable);
 
-  //перебираем все строки таблицы
   for (let i = 0; i < table.rows.length; i++) {
-    // создаем новую ячейку таблицы
     let cell = document.createElement("td");
     cell.innerHTML = i;
 
-    // вставляем ее в таблицу перед всеми остальными ячейками
     table.rows[i].insertBefore(
       cell,
       table.rows[i].firstElementChild
     ).hidden = true;
   }
-  // находим поле со списком
   let selectField = document.getElementById(idSelect);
 
-  // выделяем заголовочные ячейки таблицы
   let rowTh = table.rows[0].cells;
 
-  // перебираем все ячейки таблицы, кроме 0
   for (let i = 1; i < rowTh.length; i++) {
-    // создаем элемент списка
     let item = document.createElement("option");
     item.innerHTML = rowTh[i].innerHTML;
     item.setAttribute("value", i);
-    // добавляем очередной элемент к списку
     selectField.appendChild(item);
   }
 }
 
 function filterTable(idTable, data) {
-  // находим нужную таблицу
   let table = document.getElementById(idTable);
 
-  // текст фильтра из поля Название
   let name = data.name.value.toLowerCase();
 
   let drivetrain = data.drivetrain.value.toLowerCase();
@@ -68,11 +57,8 @@ function filterTable(idTable, data) {
     msrpTo = Infinity;
   }
 
-  //перебираем все строки таблицы без заголовка
   for (let i = 1; i < table.rows.length; i++) {
-    // скрываем все строки таблицы
     table.rows[i].hidden = true;
-    // выбираем значение из очередной строки столбца Название
     let cellName = table.rows[i].cells[1].innerHTML.toLowerCase();
 
     let cellDrivetrain = table.rows[i].cells[5].innerHTML.toLowerCase();
@@ -85,8 +71,6 @@ function filterTable(idTable, data) {
 
     let cellRating = Number(table.rows[i].cells[6].innerHTML);
 
-    // если значение из поля встречается в ячейке -
-    // делаем строку видимой
     if (
       cellName.indexOf(name) !== -1 &&
       cellDrivetrain.indexOf(drivetrain) !== -1 &&
@@ -103,9 +87,8 @@ function filterTable(idTable, data) {
 }
 
 function clearFilter() {
-  // document.querySelector("form").reset();
   var inputs = document.querySelectorAll("input[type='text']");
-  var numbers = document.querySelectorAll("input[type='numbers']");
+  var numbers = document.querySelectorAll("input[type='number']");
   var rows = document.querySelectorAll("tr");
   inputs.forEach((input) => {
     input.value = "";
@@ -119,16 +102,12 @@ function clearFilter() {
 }
 
 function sortTable(idTable, sortColumn, desc) {
-  //находим нужную таблицу и ее раздел tbody
   let table = document.getElementById(idTable).tBodies[0];
 
-  // получаем коллекцию строк
   let rowData = table.rows;
 
-  // сортируем строки таблицы без заголовков методом "пузырька"
   for (var i = 1; i < rowData.length - 1; i++) {
     for (let j = 1; j < rowData.length - i; j++) {
-      // выделяем ячейки из столбца, по которому сортируем
       let cellA = rowData[j].cells[sortColumn].innerHTML;
       let cellB = rowData[j + 1].cells[sortColumn].innerHTML;
 
@@ -136,8 +115,6 @@ function sortTable(idTable, sortColumn, desc) {
         cellA = Number(cellA);
         cellB = Number(cellB);
       }
-      // сравниваем ячейки соседних строк и меняем
-      // их местами при необходимости
       if ((desc && cellA < cellB) || (!desc && cellA > cellB)) {
         table.insertBefore(rowData[j + 1], rowData[j]);
       }
