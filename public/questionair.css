@@ -1,0 +1,40 @@
+.question {
+  border: solid thin grey;
+}
+
+.error {
+  color: red;
+}
+
+h3 {
+  position: relative;
+  font-size: 2em;
+  color: white;
+  font-family: Roboto;
+  left: 20px;
+}
+
+#test {
+  display: inline-flex;
+  flex-direction: column;
+  font-size: 1.5em;
+  gap: 50px;
+}
+
+p {
+  font-family: Roboto;
+  color: black;
+}
+
+input[type="button"] {
+  display: block;
+  margin: 60px auto;
+  padding: 1em;
+  width: 140px;
+  height: 50px;
+  text-align: center;
+  background: #1c1f2b;
+  border-radius: 40px;
+  position: relative;
+  color: white;
+}

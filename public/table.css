@@ -1,0 +1,38 @@
+.container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#forms .container {
+  display: inline-block;
+  width: 300px;
+  margin-right: 20px;
+}
+
+.container-one {
+  display: grid;
+  grid-template: 1fr / 110px 200px;
+}
+
+.container-two {
+  display: grid;
+  grid-template: 1fr / 70px 40px 90px 20px 90px;
+}
+
+th {
+  background-color: #212f3d;
+  color: white;
+}
+
+td {
+  background-color: #dc7633;
+}
+
+tr > td:nth-child(2),
+td:nth-child(4),
+td:nth-child(6),
+td:nth-child(7) {
+  background-color: #e2915b;
+}

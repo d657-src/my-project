@@ -1,47 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-wdith, initial-scale=1.0" />
-    <title>Navigation Menu Demo</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <a href="#" class="logo">CARS</a>
-      <nav>
-        <ul>
-          <li>
-            <a
-              href="/home/ddd/uni/programming/Project/index.html"
-              class="cta"
-              >Home</a
-            >
-          </li>
-          <li>
-            <a
-              href="/home/ddd/uni/programming/Project/questionair/index.html"
-              class="cta"
-              >Questionair</a
-            >
-          </li>
-          <li>
-            <a
-              href="/home/ddd/uni/programming/Project/table/table.html"
-              class="cta"
-              >Table</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </header>
+<%- include("/home/ddd/coding/my-project/views/partials/header.ejs") %>
     <div class="grid-container">
       <a href="./discr/discr.html" class="item-1" onClick="localStorage.setItem('struct', 0)"><img src="assets/images/Screenos.png" /></a>
       <a href="./discr/discr.html" class="item-2" onClick="localStorage.setItem('struct', 1)"><img src="assets/images/cur.png" /></a>

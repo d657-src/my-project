@@ -1,0 +1,18 @@
+<%- include("/home/ddd/coding/my-project/views/partials/header.ejs") %>
+    <form>
+      <div id="blockTest">
+        <!-- вопросы будем формировать в виде списка -->
+        <ol id="test"></ol>
+
+        <!-- вызываем функцию проверки тестирования -->
+        <input type="button" value="Finish" onClick="checkTest(test)" />
+        <!-- вызываем функцию, которая позволяет повторить тестирование -->
+        <input type="button" value="Try again" onClick="clearTest(test)" />
+
+        <!-- сюда будем выводить результат -->
+        <p id="result"></p>
+      </div>
+    </form>
+  <script src="/js/questionair.js"></script>
+  </body>
+</html>
