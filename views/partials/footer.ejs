@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Black Car with Wheel Disks</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="carCanvas" width="1835" height="200"></canvas>
+
+<script>
+    window.onload = function() {
+        var canvas = document.getElementById('carCanvas');
+        var ctx = canvas.getContext('2d');
+
+        var carX = 100;    // Initial car position on x-axis
+        var carY = 100;    // Adjusted y-axis for the smaller road
+        var speed = 2;     // Car movement speed
+        var direction = 1; // 1 means moving right, -1 means moving left
+        var wheelRotation = 0; // Rotation angle of the square wheels
+
+        function drawCar(x, y, direction) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+
+            // Car body
+            ctx.fillStyle = 'black';
+            ctx.fillRect(x, y, 300, 50); // Main body
+            ctx.fillRect(x + 50, y - 50, 200, 50); // Top body (roof)
+
+            // Orange window position depending on the direction (reversed)
+            ctx.fillStyle = 'orange';
+            if (direction === 1) {
+                // Window on the right (when moving right)
+                ctx.fillRect(x + 160, y - 40, 80, 40);
+            } else {
+                // Window on the left (when moving left)
+                ctx.fillRect(x + 60, y - 40, 80, 40);
+            }
+
+            // Wheels (higher position, square wheels with disks)
+            drawSquareWheel(x + 60, y + 60, 50, wheelRotation);  // Left wheel
+            drawSquareWheel(x + 240, y + 60, 50, wheelRotation); // Right wheel
+        }
+
+        function drawSquareWheel(x, y, size, rotationAngle) {
+            ctx.save();  // Save current context (for rotating square)
+            ctx.translate(x, y);  // Move origin to the center of the square
+            ctx.rotate(rotationAngle);  // Rotate square based on the angle
+
+            // Draw the square (wheel)
+            ctx.fillStyle = 'black';
+            ctx.fillRect(-size / 2, -size / 2, size, size);
+
+            // Draw the square rim (smaller square inside)
+            ctx.fillStyle = 'gray';
+            ctx.fillRect(-size / 4, -size / 4, size / 2, size / 2);
+
+            // Draw the disk (circle in the center of the wheel)
+            ctx.fillStyle = 'silver'; // Disk color
+            ctx.beginPath();
+            ctx.arc(0, 0, size / 4, 0, Math.PI * 2); // Draw a circle in the center
+            ctx.fill();
+
+            ctx.restore();  // Restore the previous context (to stop rotating other elements)
+        }
+
+        function animate() {
+            drawCar(carX, carY, direction);
+
+            // Update car position
+            carX += speed * direction;
+
+            // Update wheel rotation (faster)
+            wheelRotation += (Math.PI / 5) * direction; // Faster rotation speed
+
+            // Reverse direction if the car hits the canvas edge
+            if (carX + 300 > canvas.width || carX < 0) {
+                direction *= -1;  // Change direction
+            }
+
+            requestAnimationFrame(animate); // Call animate again
+        }
+
+        animate(); // Start the animation
+    };
+</script>
+
+</body>
+</html>

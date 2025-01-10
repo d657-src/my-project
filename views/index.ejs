@@ -1,9 +1,9 @@
-<%- include("/home/ddd/coding/my-project/views/partials/header.ejs") %>
+<%- include("partials/header.ejs") %>
     <div class="grid-container">
-      <a href="page.ejs" class="item-1" onClick="localStorage.setItem('struct', 0)"><img src="/assets/images/main.png" /></a>
-      <a href="page.ejs" class="item-2" onClick="localStorage.setItem('struct', 1)"><img src="/assets/images/orange.png" /></a>
-      <a href="page.ejs" class="item-3" onClick="localStorage.setItem('struct', 2)"><img src="/assets/images/green.png" /></a>
-      <a href="page.ejs" class="item-4" onClick="localStorage.setItem('struct', 3)"><img class="item-4" src="/assets/images/black.png" /></a>
+      <a href="/page" class="item-1" onClick="localStorage.setItem('struct', 0)"><img src="/assets/images/main.png" /></a>
+      <a href="/page" class="item-2" onClick="localStorage.setItem('struct', 1)"><img src="/assets/images/orange.png" /></a>
+      <a href="/page" class="item-3" onClick="localStorage.setItem('struct', 2)"><img src="/assets/images/green.png" /></a>
+      <a href="/page" class="item-4" onClick="localStorage.setItem('struct', 3)"><img class="item-4" src="/assets/images/black.png" /></a>
     </div>
     <div class="bottom">
       <div class="item">
@@ -75,6 +75,7 @@
         wireless charging and smartphone integration.
       </div>
     </div>
+    <%- include("partials/footer.ejs") %>
     <script src="js/index.js"></script>
   </body>
 </html>

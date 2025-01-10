@@ -8,6 +8,11 @@ a {
   text-decoration: none;
 }
 
+nav a.active {
+  background-color: #d35400;
+  color: #fff;
+}
+
 li {
   list-style-type: none;
 }
@@ -56,6 +61,7 @@ nav ul li a:hover {
   background-color: #d35400;
   color: #fff;
 }
+
 
 .grid-container {
   display: grid;
@@ -134,10 +140,6 @@ td:nth-child(7) {
 }
 
 /* for the questionair */
-.question {
-  border: solid thin grey;
-}
-
 .error {
   color: red;
 }
@@ -199,6 +201,16 @@ h3 {
 
 img {
   margin-bottom: 20px;
+}
+
+.container-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#forImg {
+  width: auto;
 }
 
 /* media */

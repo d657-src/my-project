@@ -15,30 +15,44 @@
   </head>
   <body>
     <header>
-      <a href="#" class="logo">CARS</a>
+      <a href="/" class="logo">CARS</a>
       <nav>
         <ul>
           <li>
             <a
-              href="/index.ejs"
+              href="/"
               class="cta"
               >Home</a
             >
           </li>
           <li>
             <a
-              href="/home/ddd/uni/programming/Project/questionair/index.html"
+              href="/questionair"
               class="cta"
               >Questionair</a
             >
           </li>
           <li>
             <a
-              href="/home/ddd/uni/programming/Project/table/table.html"
+              href="/table"
               class="cta"
               >Table</a
             >
           </li>
         </ul>
       </nav>
+      <script>
+  // Get the current page URL
+  var currentPage = window.location.pathname;
+
+  // Select all navigation links
+  var navLinks = document.querySelectorAll('nav a');
+
+  // Loop through each link and add 'active' class to the matching link
+  navLinks.forEach(function(link) {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active'); // Add active class to the matching link
+    }
+  });
+</script>
     </header>
